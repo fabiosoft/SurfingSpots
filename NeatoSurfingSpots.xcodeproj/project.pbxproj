@@ -15,6 +15,10 @@
 		E5512B0E27EE70E30089F274 /* NeatoSurfingSpotsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512B0D27EE70E30089F274 /* NeatoSurfingSpotsUITests.swift */; };
 		E5512B1027EE70E30089F274 /* NeatoSurfingSpotsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512B0F27EE70E30089F274 /* NeatoSurfingSpotsUITestsLaunchTests.swift */; };
 		E5512B1E27EE72BD0089F274 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512B1D27EE72BD0089F274 /* Coordinator.swift */; };
+		E5CDE19727EE785B009219AD /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDE19627EE785B009219AD /* NetworkClient.swift */; };
+		E5CDE19927EE78E7009219AD /* SurfingSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDE19827EE78E7009219AD /* SurfingSpot.swift */; };
+		E5CDE19B27EE7AC8009219AD /* NetworkClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDE19A27EE7AC8009219AD /* NetworkClientMock.swift */; };
+		E5CDE19D27EE7C4D009219AD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDE19C27EE7C4D009219AD /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		E5512B0D27EE70E30089F274 /* NeatoSurfingSpotsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeatoSurfingSpotsUITests.swift; sourceTree = "<group>"; };
 		E5512B0F27EE70E30089F274 /* NeatoSurfingSpotsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeatoSurfingSpotsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E5512B1D27EE72BD0089F274 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		E5CDE19627EE785B009219AD /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		E5CDE19827EE78E7009219AD /* SurfingSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfingSpot.swift; sourceTree = "<group>"; };
+		E5CDE19A27EE7AC8009219AD /* NetworkClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientMock.swift; sourceTree = "<group>"; };
+		E5CDE19C27EE7C4D009219AD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,9 @@
 		E5512AEB27EE70DF0089F274 /* NeatoSurfingSpots */ = {
 			isa = PBXGroup;
 			children = (
+				E5CDE19527EE7643009219AD /* View */,
+				E5CDE19427EE7632009219AD /* Networking */,
+				E5CDE19327EE762C009219AD /* Model */,
 				E5512B1C27EE729C0089F274 /* Coordinator */,
 				E5512AEC27EE70DF0089F274 /* AppDelegate.swift */,
 				E5512AF027EE70DF0089F274 /* HomeViewController.swift */,
@@ -130,6 +141,31 @@
 				E5512B1D27EE72BD0089F274 /* Coordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		E5CDE19327EE762C009219AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E5CDE19827EE78E7009219AD /* SurfingSpot.swift */,
+				E5CDE19C27EE7C4D009219AD /* HomeViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E5CDE19427EE7632009219AD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E5CDE19627EE785B009219AD /* NetworkClient.swift */,
+				E5CDE19A27EE7AC8009219AD /* NetworkClientMock.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E5CDE19527EE7643009219AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,8 +321,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5512AF127EE70DF0089F274 /* HomeViewController.swift in Sources */,
+				E5CDE19927EE78E7009219AD /* SurfingSpot.swift in Sources */,
+				E5CDE19D27EE7C4D009219AD /* HomeViewModel.swift in Sources */,
 				E5512AED27EE70DF0089F274 /* AppDelegate.swift in Sources */,
+				E5CDE19B27EE7AC8009219AD /* NetworkClientMock.swift in Sources */,
 				E5512B1E27EE72BD0089F274 /* Coordinator.swift in Sources */,
+				E5CDE19727EE785B009219AD /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
