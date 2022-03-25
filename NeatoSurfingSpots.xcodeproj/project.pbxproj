@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		E5512AED27EE70DF0089F274 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512AEC27EE70DF0089F274 /* AppDelegate.swift */; };
-		E5512AF127EE70DF0089F274 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512AF027EE70DF0089F274 /* ViewController.swift */; };
+		E5512AF127EE70DF0089F274 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512AF027EE70DF0089F274 /* HomeViewController.swift */; };
 		E5512AF627EE70E20089F274 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5512AF527EE70E20089F274 /* Assets.xcassets */; };
 		E5512AF927EE70E20089F274 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5512AF727EE70E20089F274 /* LaunchScreen.storyboard */; };
 		E5512B0427EE70E30089F274 /* NeatoSurfingSpotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512B0327EE70E30089F274 /* NeatoSurfingSpotsTests.swift */; };
 		E5512B0E27EE70E30089F274 /* NeatoSurfingSpotsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512B0D27EE70E30089F274 /* NeatoSurfingSpotsUITests.swift */; };
 		E5512B1027EE70E30089F274 /* NeatoSurfingSpotsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512B0F27EE70E30089F274 /* NeatoSurfingSpotsUITestsLaunchTests.swift */; };
+		E5512B1E27EE72BD0089F274 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512B1D27EE72BD0089F274 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		E5512AE927EE70DF0089F274 /* NeatoSurfingSpots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeatoSurfingSpots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5512AEC27EE70DF0089F274 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E5512AF027EE70DF0089F274 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E5512AF027EE70DF0089F274 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E5512AF527EE70E20089F274 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5512AF827EE70E20089F274 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5512AFA27EE70E20089F274 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +46,7 @@
 		E5512B0927EE70E30089F274 /* NeatoSurfingSpotsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeatoSurfingSpotsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5512B0D27EE70E30089F274 /* NeatoSurfingSpotsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeatoSurfingSpotsUITests.swift; sourceTree = "<group>"; };
 		E5512B0F27EE70E30089F274 /* NeatoSurfingSpotsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeatoSurfingSpotsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E5512B1D27EE72BD0089F274 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +97,9 @@
 		E5512AEB27EE70DF0089F274 /* NeatoSurfingSpots */ = {
 			isa = PBXGroup;
 			children = (
+				E5512B1C27EE729C0089F274 /* Coordinator */,
 				E5512AEC27EE70DF0089F274 /* AppDelegate.swift */,
-				E5512AF027EE70DF0089F274 /* ViewController.swift */,
+				E5512AF027EE70DF0089F274 /* HomeViewController.swift */,
 				E5512AF527EE70E20089F274 /* Assets.xcassets */,
 				E5512AF727EE70E20089F274 /* LaunchScreen.storyboard */,
 				E5512AFA27EE70E20089F274 /* Info.plist */,
@@ -121,6 +124,14 @@
 			path = NeatoSurfingSpotsUITests;
 			sourceTree = "<group>";
 		};
+		E5512B1C27EE729C0089F274 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E5512B1D27EE72BD0089F274 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,6 +142,7 @@
 				E5512AE527EE70DF0089F274 /* Sources */,
 				E5512AE627EE70DF0089F274 /* Frameworks */,
 				E5512AE727EE70DF0089F274 /* Resources */,
+				E5512B1F27EE744B0089F274 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -272,8 +284,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5512AF127EE70DF0089F274 /* ViewController.swift in Sources */,
+				E5512AF127EE70DF0089F274 /* HomeViewController.swift in Sources */,
 				E5512AED27EE70DF0089F274 /* AppDelegate.swift in Sources */,
+				E5512B1E27EE72BD0089F274 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
