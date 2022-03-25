@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E5512AED27EE70DF0089F274 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512AEC27EE70DF0089F274 /* AppDelegate.swift */; };
-		E5512AEF27EE70DF0089F274 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512AEE27EE70DF0089F274 /* SceneDelegate.swift */; };
 		E5512AF127EE70DF0089F274 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512AF027EE70DF0089F274 /* ViewController.swift */; };
-		E5512AF427EE70DF0089F274 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5512AF227EE70DF0089F274 /* Main.storyboard */; };
 		E5512AF627EE70E20089F274 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5512AF527EE70E20089F274 /* Assets.xcassets */; };
 		E5512AF927EE70E20089F274 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5512AF727EE70E20089F274 /* LaunchScreen.storyboard */; };
 		E5512B0427EE70E30089F274 /* NeatoSurfingSpotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512B0327EE70E30089F274 /* NeatoSurfingSpotsTests.swift */; };
@@ -38,9 +36,7 @@
 /* Begin PBXFileReference section */
 		E5512AE927EE70DF0089F274 /* NeatoSurfingSpots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeatoSurfingSpots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5512AEC27EE70DF0089F274 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E5512AEE27EE70DF0089F274 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E5512AF027EE70DF0089F274 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E5512AF327EE70DF0089F274 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E5512AF527EE70E20089F274 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5512AF827EE70E20089F274 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5512AFA27EE70E20089F274 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,9 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				E5512AEC27EE70DF0089F274 /* AppDelegate.swift */,
-				E5512AEE27EE70DF0089F274 /* SceneDelegate.swift */,
 				E5512AF027EE70DF0089F274 /* ViewController.swift */,
-				E5512AF227EE70DF0089F274 /* Main.storyboard */,
 				E5512AF527EE70E20089F274 /* Assets.xcassets */,
 				E5512AF727EE70E20089F274 /* LaunchScreen.storyboard */,
 				E5512AFA27EE70E20089F274 /* Info.plist */,
@@ -233,7 +227,6 @@
 			files = (
 				E5512AF927EE70E20089F274 /* LaunchScreen.storyboard in Resources */,
 				E5512AF627EE70E20089F274 /* Assets.xcassets in Resources */,
-				E5512AF427EE70DF0089F274 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +253,6 @@
 			files = (
 				E5512AF127EE70DF0089F274 /* ViewController.swift in Sources */,
 				E5512AED27EE70DF0089F274 /* AppDelegate.swift in Sources */,
-				E5512AEF27EE70DF0089F274 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +289,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E5512AF227EE70DF0089F274 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E5512AF327EE70DF0089F274 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E5512AF727EE70E20089F274 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -442,7 +426,7 @@
 				INFOPLIST_FILE = NeatoSurfingSpots/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -454,7 +438,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -470,7 +454,7 @@
 				INFOPLIST_FILE = NeatoSurfingSpots/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -482,7 +466,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
