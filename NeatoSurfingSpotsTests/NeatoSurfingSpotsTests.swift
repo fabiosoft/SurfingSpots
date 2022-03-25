@@ -31,6 +31,7 @@ class NeatoSurfingSpotsTests: XCTestCase {
             switch result {
             case .success(let cities):
                 XCTAssertEqual(cities.count, perPage)
+                XCTAssertGreaterThan(cities.first!.temperature, -1) // random temp > 0
             case .failure(let error):
                 XCTAssertNotNil(error)
 

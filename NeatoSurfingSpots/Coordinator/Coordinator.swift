@@ -24,7 +24,7 @@ class MainCoordinator: Coordinator {
     }
 
     func start() {
-        let homeVC = HomeViewController()
+        let homeVC = HomeViewController(viewModel: HomeViewModel(service: NetworkClientMock()))
         homeVC.coordinator = self
         navigationController.pushViewController(homeVC, animated: false)
     }

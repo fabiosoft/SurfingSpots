@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		509C3C5B25B4C69EAE112BA7 /* Pods_NeatoSurfingSpots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B72944382DB072ECA995BEFF /* Pods_NeatoSurfingSpots.framework */; };
+		5DFB0BB25D4BE80227EEE964 /* Pods_NeatoSurfingSpots_NeatoSurfingSpotsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23CE5042D1469BF552F0D8BF /* Pods_NeatoSurfingSpots_NeatoSurfingSpotsUITests.framework */; };
+		E019D1B785AEB23B773C6124 /* Pods_NeatoSurfingSpotsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DA3CC8C83330EC9E2D2362 /* Pods_NeatoSurfingSpotsTests.framework */; };
 		E5512AED27EE70DF0089F274 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512AEC27EE70DF0089F274 /* AppDelegate.swift */; };
 		E5512AF127EE70DF0089F274 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512AF027EE70DF0089F274 /* HomeViewController.swift */; };
 		E5512AF627EE70E20089F274 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5512AF527EE70E20089F274 /* Assets.xcassets */; };
@@ -19,6 +22,9 @@
 		E5CDE19927EE78E7009219AD /* SurfingSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDE19827EE78E7009219AD /* SurfingSpot.swift */; };
 		E5CDE19B27EE7AC8009219AD /* NetworkClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDE19A27EE7AC8009219AD /* NetworkClientMock.swift */; };
 		E5CDE19D27EE7C4D009219AD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDE19C27EE7C4D009219AD /* HomeViewModel.swift */; };
+		E5CDE19F27EE82F9009219AD /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDE19E27EE82F9009219AD /* CityViewModel.swift */; };
+		E5CDE1A127EE89C6009219AD /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDE1A027EE89C6009219AD /* CityCell.swift */; };
+		E5CDE1A327EE89CE009219AD /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDE1A227EE89CE009219AD /* Reusable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +45,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BD573065061D2D595204548 /* Pods-NeatoSurfingSpots.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatoSurfingSpots.debug.xcconfig"; path = "Target Support Files/Pods-NeatoSurfingSpots/Pods-NeatoSurfingSpots.debug.xcconfig"; sourceTree = "<group>"; };
+		23CE5042D1469BF552F0D8BF /* Pods_NeatoSurfingSpots_NeatoSurfingSpotsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeatoSurfingSpots_NeatoSurfingSpotsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50E1A19FF402D2C2ECEAD810 /* Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests.release.xcconfig"; path = "Target Support Files/Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests/Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7BCF8E028AC1BCECBCFA3595 /* Pods-NeatoSurfingSpotsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatoSurfingSpotsTests.debug.xcconfig"; path = "Target Support Files/Pods-NeatoSurfingSpotsTests/Pods-NeatoSurfingSpotsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B72944382DB072ECA995BEFF /* Pods_NeatoSurfingSpots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeatoSurfingSpots.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7DA3CC8C83330EC9E2D2362 /* Pods_NeatoSurfingSpotsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeatoSurfingSpotsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE760C55C22AA1451F9BEDCE /* Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests.debug.xcconfig"; path = "Target Support Files/Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests/Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DEE6119834B6FFD060BA81B8 /* Pods-NeatoSurfingSpots.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatoSurfingSpots.release.xcconfig"; path = "Target Support Files/Pods-NeatoSurfingSpots/Pods-NeatoSurfingSpots.release.xcconfig"; sourceTree = "<group>"; };
 		E5512AE927EE70DF0089F274 /* NeatoSurfingSpots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeatoSurfingSpots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5512AEC27EE70DF0089F274 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5512AF027EE70DF0089F274 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +69,10 @@
 		E5CDE19827EE78E7009219AD /* SurfingSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfingSpot.swift; sourceTree = "<group>"; };
 		E5CDE19A27EE7AC8009219AD /* NetworkClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientMock.swift; sourceTree = "<group>"; };
 		E5CDE19C27EE7C4D009219AD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E5CDE19E27EE82F9009219AD /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
+		E5CDE1A027EE89C6009219AD /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
+		E5CDE1A227EE89CE009219AD /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		F1BBFF63608C3ED9C818F616 /* Pods-NeatoSurfingSpotsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatoSurfingSpotsTests.release.xcconfig"; path = "Target Support Files/Pods-NeatoSurfingSpotsTests/Pods-NeatoSurfingSpotsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				509C3C5B25B4C69EAE112BA7 /* Pods_NeatoSurfingSpots.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E019D1B785AEB23B773C6124 /* Pods_NeatoSurfingSpotsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +96,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DFB0BB25D4BE80227EEE964 /* Pods_NeatoSurfingSpots_NeatoSurfingSpotsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6ACBF7A82AF1E5ADAAA603A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B72944382DB072ECA995BEFF /* Pods_NeatoSurfingSpots.framework */,
+				23CE5042D1469BF552F0D8BF /* Pods_NeatoSurfingSpots_NeatoSurfingSpotsUITests.framework */,
+				C7DA3CC8C83330EC9E2D2362 /* Pods_NeatoSurfingSpotsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E5512AE027EE70DE0089F274 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +120,8 @@
 				E5512B0227EE70E30089F274 /* NeatoSurfingSpotsTests */,
 				E5512B0C27EE70E30089F274 /* NeatoSurfingSpotsUITests */,
 				E5512AEA27EE70DF0089F274 /* Products */,
+				F6D43C1C7498FA71443AC47B /* Pods */,
+				6ACBF7A82AF1E5ADAAA603A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,6 +181,7 @@
 			children = (
 				E5CDE19827EE78E7009219AD /* SurfingSpot.swift */,
 				E5CDE19C27EE7C4D009219AD /* HomeViewModel.swift */,
+				E5CDE19E27EE82F9009219AD /* CityViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,8 +198,23 @@
 		E5CDE19527EE7643009219AD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E5CDE1A027EE89C6009219AD /* CityCell.swift */,
+				E5CDE1A227EE89CE009219AD /* Reusable.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F6D43C1C7498FA71443AC47B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0BD573065061D2D595204548 /* Pods-NeatoSurfingSpots.debug.xcconfig */,
+				DEE6119834B6FFD060BA81B8 /* Pods-NeatoSurfingSpots.release.xcconfig */,
+				CE760C55C22AA1451F9BEDCE /* Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests.debug.xcconfig */,
+				50E1A19FF402D2C2ECEAD810 /* Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests.release.xcconfig */,
+				7BCF8E028AC1BCECBCFA3595 /* Pods-NeatoSurfingSpotsTests.debug.xcconfig */,
+				F1BBFF63608C3ED9C818F616 /* Pods-NeatoSurfingSpotsTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,10 +224,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5512B1327EE70E30089F274 /* Build configuration list for PBXNativeTarget "NeatoSurfingSpots" */;
 			buildPhases = (
+				EED7E93801F904B03E20AB9B /* [CP] Check Pods Manifest.lock */,
 				E5512AE527EE70DF0089F274 /* Sources */,
 				E5512AE627EE70DF0089F274 /* Frameworks */,
 				E5512AE727EE70DF0089F274 /* Resources */,
 				E5512B1F27EE744B0089F274 /* SwiftLint */,
+				CF013683B0CE507E640F40A6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +244,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5512B1627EE70E30089F274 /* Build configuration list for PBXNativeTarget "NeatoSurfingSpotsTests" */;
 			buildPhases = (
+				F2ADF2FB73FFD639AEAC75A0 /* [CP] Check Pods Manifest.lock */,
 				E5512AFB27EE70E30089F274 /* Sources */,
 				E5512AFC27EE70E30089F274 /* Frameworks */,
 				E5512AFD27EE70E30089F274 /* Resources */,
@@ -211,9 +263,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5512B1927EE70E30089F274 /* Build configuration list for PBXNativeTarget "NeatoSurfingSpotsUITests" */;
 			buildPhases = (
+				72B73B5651C152FD5EDC5D4C /* [CP] Check Pods Manifest.lock */,
 				E5512B0527EE70E30089F274 /* Sources */,
 				E5512B0627EE70E30089F274 /* Frameworks */,
 				E5512B0727EE70E30089F274 /* Resources */,
+				AAB746DAB8C05F76089097E1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -295,6 +349,62 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		72B73B5651C152FD5EDC5D4C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAB746DAB8C05F76089097E1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests/Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests/Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests/Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF013683B0CE507E640F40A6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NeatoSurfingSpots/Pods-NeatoSurfingSpots-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NeatoSurfingSpots/Pods-NeatoSurfingSpots-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NeatoSurfingSpots/Pods-NeatoSurfingSpots-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E5512B1F27EE744B0089F274 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -313,6 +423,50 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  #swiftlint\n  swiftlint --fix && swiftlint\n  #echo \"no-op\"\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		EED7E93801F904B03E20AB9B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NeatoSurfingSpots-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2ADF2FB73FFD639AEAC75A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NeatoSurfingSpotsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -323,7 +477,10 @@
 				E5512AF127EE70DF0089F274 /* HomeViewController.swift in Sources */,
 				E5CDE19927EE78E7009219AD /* SurfingSpot.swift in Sources */,
 				E5CDE19D27EE7C4D009219AD /* HomeViewModel.swift in Sources */,
+				E5CDE19F27EE82F9009219AD /* CityViewModel.swift in Sources */,
+				E5CDE1A327EE89CE009219AD /* Reusable.swift in Sources */,
 				E5512AED27EE70DF0089F274 /* AppDelegate.swift in Sources */,
+				E5CDE1A127EE89C6009219AD /* CityCell.swift in Sources */,
 				E5CDE19B27EE7AC8009219AD /* NetworkClientMock.swift in Sources */,
 				E5512B1E27EE72BD0089F274 /* Coordinator.swift in Sources */,
 				E5CDE19727EE785B009219AD /* NetworkClient.swift in Sources */,
@@ -490,6 +647,7 @@
 		};
 		E5512B1427EE70E30089F274 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BD573065061D2D595204548 /* Pods-NeatoSurfingSpots.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -518,6 +676,7 @@
 		};
 		E5512B1527EE70E30089F274 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEE6119834B6FFD060BA81B8 /* Pods-NeatoSurfingSpots.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -546,6 +705,7 @@
 		};
 		E5512B1727EE70E30089F274 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BCF8E028AC1BCECBCFA3595 /* Pods-NeatoSurfingSpotsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -566,6 +726,7 @@
 		};
 		E5512B1827EE70E30089F274 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1BBFF63608C3ED9C818F616 /* Pods-NeatoSurfingSpotsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -586,6 +747,7 @@
 		};
 		E5512B1A27EE70E30089F274 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE760C55C22AA1451F9BEDCE /* Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -604,6 +766,7 @@
 		};
 		E5512B1B27EE70E30089F274 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50E1A19FF402D2C2ECEAD810 /* Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
