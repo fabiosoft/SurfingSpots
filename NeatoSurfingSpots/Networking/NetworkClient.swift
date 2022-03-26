@@ -9,6 +9,7 @@ import UIKit
 
 protocol Network {
     func cities(completion: @escaping (Result<[City], NetworkError>) -> Void)
+    func randomNumber(completion: @escaping (Result<Int, NetworkError>) -> Void)
 }
 
 enum NetworkError: Error {
@@ -61,5 +62,9 @@ class NetworkClient: Network {
 
         }
         task.resume()
+    }
+
+    func randomNumber(completion: @escaping (Result<Int, NetworkError>) -> Void) {
+
     }
 }

@@ -31,13 +31,39 @@ class NeatoSurfingSpotsTests: XCTestCase {
             switch result {
             case .success(let cities):
                 XCTAssertEqual(cities.count, perPage)
-                XCTAssertGreaterThan(cities.first!.temperature, -1) // random temp > 0
             case .failure(let error):
                 XCTAssertNotNil(error)
 
                 exp.fulfill()
             }
         }
+    }
+
+    func testFetchRandomNumber() {
+        let exp = XCTestExpectation()
+        let network = NetworkClientMock()
+        network.randomNumber = 42
+        network.randomNumber { result in
+            switch result {
+            case .success(let number):
+                XCTAssertEqual(number, 42)
+            case .failure(let error):
+                XCTAssertNotNil(error)
+
+                exp.fulfill()
+            }
+        }
+    }
+
+    func testCityViewModel() {
+        let city = City(name: "Napoli")
+        let cityVM = CityViewModel(city)
+        XCTAssertEqual(cityVM.displayName, "Napoli")
+        XCTAssertNotNil(cityVM.skylineImage)
+        cityVM.temperature.onNext(value: 31)
+        XCTAssertTrue(cityVM.isSunny)
+        cityVM.temperature.onNext(value: 29)
+        XCTAssertFalse(cityVM.isSunny)
     }
 
 }
