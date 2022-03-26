@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// root model
 class SurfingSpot: Codable {
     let cities: [City]?
 
@@ -15,6 +16,7 @@ class SurfingSpot: Codable {
     }
 }
 
+/// city model
 class City: Codable {
     let name: String?
 

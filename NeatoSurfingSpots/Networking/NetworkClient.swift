@@ -8,7 +8,9 @@
 import UIKit
 
 protocol Network {
+    /// fetch all cities
     func cities(completion: @escaping (Result<[City], NetworkError>) -> Void)
+    /// get random number
     func randomNumber(completion: @escaping (Result<Int, NetworkError>) -> Void)
 }
 

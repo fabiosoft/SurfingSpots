@@ -12,7 +12,7 @@ import FNEasyBind
 protocol CityViewModelProtocol {
     var displayName: String? {get}
     var temperature: Observable<Int> {get}
-    var skylineImage: UIImage? {get}
+    // var skylineImage: UIImage? {get}
     func skyline() -> UIImage?
     var isSunny: Bool {get}
     func weatherConditions() -> String
@@ -22,18 +22,20 @@ class CityViewModel: CityViewModelProtocol {
     private(set) var city: City
     private var network: Network
 
+    // displayable city name
     var displayName: String? {
         return city.name
     }
 
-    var skylineImage: UIImage?
+    private var skylineImage: UIImage?
+    /// get city image, or nil if not sunny
     func skyline() -> UIImage? {
         if isSunny {
             return skylineImage
         }
         return nil
     }
-
+    /// check if the weather is sunny
     var isSunny: Bool {
         guard let temperature = self.temperature.value else {
             return false
@@ -41,11 +43,13 @@ class CityViewModel: CityViewModelProtocol {
         return temperature > 30
     }
 
+    /// current temperature, observable
     var temperature: Observable<Int> {
         return temperatureVariable.asObservable()
     }
     private let temperatureVariable = Variable<Int>(Int.random(in: 0..<100))
 
+    /// get localized desction of current weather
     func weatherConditions() -> String {
         "\(isSunny ? NSLocalizedString("Sunny", comment: "") : NSLocalizedString("Cloudy", comment: "")) - \(self.temperature.value ?? 0) degree"
     }

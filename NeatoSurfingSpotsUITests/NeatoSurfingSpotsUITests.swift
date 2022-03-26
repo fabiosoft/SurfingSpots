@@ -22,6 +22,7 @@ class NeatoSurfingSpotsUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    /// test home title
     func test_title() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
@@ -31,6 +32,7 @@ class NeatoSurfingSpotsUITests: XCTestCase {
         XCTAssertTrue(surfingSpotsStaticTitle.exists)
     }
 
+    /// test fetched and displayed rows
     func test_tbItems() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()

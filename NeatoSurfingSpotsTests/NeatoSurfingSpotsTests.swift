@@ -18,11 +18,13 @@ class NeatoSurfingSpotsTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    /// test the home page title
     func testHomeVMTitle() {
         let homeVM = HomeViewModel()
         XCTAssertEqual(homeVM.title, "Surfing Spots")
     }
 
+    /// test requested cities
     func testFetchCities() {
         let exp = XCTestExpectation()
         let network = NetworkClientMock()
@@ -39,6 +41,7 @@ class NeatoSurfingSpotsTests: XCTestCase {
         }
     }
 
+    /// test fetched random number
     func testFetchRandomNumber() {
         let exp = XCTestExpectation()
         let network = NetworkClientMock()
@@ -55,13 +58,14 @@ class NeatoSurfingSpotsTests: XCTestCase {
         }
     }
 
+    /// test sunny, skyline image according to temperature
     func testCityViewModel() {
         let city = City(name: "Napoli")
         let cityVM = CityViewModel(city)
         XCTAssertEqual(cityVM.displayName, "Napoli")
-        XCTAssertNotNil(cityVM.skylineImage)
         cityVM.temperature.onNext(value: 31)
         XCTAssertTrue(cityVM.isSunny)
+        XCTAssertNotNil(cityVM.skyline())
         cityVM.temperature.onNext(value: 29)
         XCTAssertFalse(cityVM.isSunny)
     }

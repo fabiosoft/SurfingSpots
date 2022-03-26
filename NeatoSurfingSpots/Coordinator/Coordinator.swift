@@ -23,6 +23,7 @@ class MainCoordinator: Coordinator {
         navigationController.navigationBar.prefersLargeTitles = prefersLargeTitles
     }
 
+    /// present home view controller
     func start() {
         let homeVC = HomeViewController(viewModel: HomeViewModel(service: NetworkClientMock()))
         homeVC.coordinator = self

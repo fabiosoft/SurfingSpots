@@ -37,11 +37,13 @@ class HomeViewModel: HomeViewModelProtocol {
     /// the value is mutable, so only this class can modify it.
     private let isfetchingVariable = Variable<Bool>(false)
 
+    /// fetched cities
     var cities: Observable<[CityViewModel]> {
         return citiesVariable.asObservable()
     }
     private let citiesVariable = Variable<[CityViewModel]>([])
 
+    /// start scheduling the timer to update temperatures randomly
     func startUpdatingTemperatures() {
         self.tempTimer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true, block: { _ in
 
@@ -60,6 +62,7 @@ class HomeViewModel: HomeViewModelProtocol {
         })
     }
 
+    /// sort predicate to compare items descending accoring to temperature value (sort descending)
     private func sortPredicate<Element: Comparable>(_ elem1: Element?, _ elem2: Element?) -> Bool {
         guard let temperature1 = elem1,
               let temperature2 = elem2
@@ -69,6 +72,7 @@ class HomeViewModel: HomeViewModelProtocol {
         return temperature1 > temperature2 // descending
     }
 
+    /// fetch all cities, and sort by temperature
     func fetchCities() {
         if isfetchingVariable.value {
             return
