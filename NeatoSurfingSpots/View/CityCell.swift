@@ -76,13 +76,13 @@ class CityCell: UITableViewCell, Reusable {
             self.cityTitle.text = model?.displayName
 
             model?.temperature
-                .subscribe { [weak self] _, _ in
+                .subscribe(DispatchQueue.main, { [weak self] _, _ in
                     guard let self = self else {
                         return
                     }
                     self.cityWeather.text = self.model?.weatherConditions()
                     self.cityImageView.image = self.model?.skyline()
-                }
+                })
                 .disposed(by: &disposeBag)
         }
     }

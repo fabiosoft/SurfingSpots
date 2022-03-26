@@ -22,6 +22,7 @@ class HomeViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(CityCell.self, forCellReuseIdentifier: CityCell.reuseIdentifier)
         tableView.delegate = self
+        tableView.separatorStyle = .none
         return tableView
     }()
 

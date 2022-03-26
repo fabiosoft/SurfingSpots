@@ -51,20 +51,22 @@ class HomeViewModel: HomeViewModelProtocol {
                 case .success(let number):
                     let randomCity = self.citiesVariable.value.randomElement()
                     randomCity?.temperature.onNext(value: number)
-                    let sortedCities = self.citiesVariable.value.sorted(by: {
-                        guard let temperature1 = $0.temperature.value,
-                              let temperature2 = $1.temperature.value
-                        else {
-                            return false
-                        }
-                        return temperature1 > temperature2
-                    })
+                    let sortedCities = self.citiesVariable.value.sorted(by: { self.sortPredicate($0.temperature.value, $1.temperature.value) })
                     self.citiesVariable.onNext(value: sortedCities)
                 case .failure:
                     break
                 }
             }
         })
+    }
+
+    private func sortPredicate<Element: Comparable>(_ elem1: Element?, _ elem2: Element?) -> Bool {
+        guard let temperature1 = elem1,
+              let temperature2 = elem2
+        else {
+            return false
+        }
+        return temperature1 > temperature2 // descending
     }
 
     func fetchCities() {
@@ -82,14 +84,7 @@ class HomeViewModel: HomeViewModelProtocol {
                 case .success(let cities):
                     let viewmodels = cities
                         .compactMap { CityViewModel($0) }
-                        .sorted(by: {
-                            guard let temperature1 = $0.temperature.value,
-                                  let temperature2 = $1.temperature.value
-                            else {
-                                return false
-                            }
-                            return temperature1 > temperature2
-                        })
+                        .sorted(by: { self.sortPredicate($0.temperature.value, $1.temperature.value) })
                     self.citiesVariable.onNext(value: viewmodels)
                 case .failure:
                     self.citiesVariable.onNext(value: [])
