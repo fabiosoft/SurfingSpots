@@ -25,6 +25,7 @@
 		E5CDE19F27EE82F9009219AD /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDE19E27EE82F9009219AD /* CityViewModel.swift */; };
 		E5CDE1A127EE89C6009219AD /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDE1A027EE89C6009219AD /* CityCell.swift */; };
 		E5CDE1A327EE89CE009219AD /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDE1A227EE89CE009219AD /* Reusable.swift */; };
+		E5CDE1A627EE96B3009219AD /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDE1A527EE96B3009219AD /* Hash.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		E5CDE19E27EE82F9009219AD /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
 		E5CDE1A027EE89C6009219AD /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		E5CDE1A227EE89CE009219AD /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		E5CDE1A527EE96B3009219AD /* Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hash.swift; sourceTree = "<group>"; };
 		F1BBFF63608C3ED9C818F616 /* Pods-NeatoSurfingSpotsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatoSurfingSpotsTests.release.xcconfig"; path = "Target Support Files/Pods-NeatoSurfingSpotsTests/Pods-NeatoSurfingSpotsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +140,7 @@
 		E5512AEB27EE70DF0089F274 /* NeatoSurfingSpots */ = {
 			isa = PBXGroup;
 			children = (
+				E5CDE1A427EE96A9009219AD /* Extension */,
 				E5CDE19527EE7643009219AD /* View */,
 				E5CDE19427EE7632009219AD /* Networking */,
 				E5CDE19327EE762C009219AD /* Model */,
@@ -202,6 +205,14 @@
 				E5CDE1A227EE89CE009219AD /* Reusable.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E5CDE1A427EE96A9009219AD /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E5CDE1A527EE96B3009219AD /* Hash.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		F6D43C1C7498FA71443AC47B /* Pods */ = {
@@ -474,6 +485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5CDE1A627EE96B3009219AD /* Hash.swift in Sources */,
 				E5512AF127EE70DF0089F274 /* HomeViewController.swift in Sources */,
 				E5CDE19927EE78E7009219AD /* SurfingSpot.swift in Sources */,
 				E5CDE19D27EE7C4D009219AD /* HomeViewModel.swift in Sources */,

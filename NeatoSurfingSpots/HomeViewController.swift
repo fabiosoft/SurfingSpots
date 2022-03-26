@@ -9,7 +9,7 @@ import UIKit
 import FNEasyBind
 
 class HomeViewController: UIViewController {
-    typealias StargazersDataSource = UITableViewDiffableDataSource<HomeViewModelSection, CityViewModel>
+    typealias HomeDataSource = UITableViewDiffableDataSource<HomeViewModelSection, CityViewModel>
     typealias HomeCitiesSnapshot = NSDiffableDataSourceSnapshot<HomeViewModelSection, CityViewModel>
 
     private var homeViewModel: HomeViewModel!
@@ -25,8 +25,8 @@ class HomeViewController: UIViewController {
         return tableView
     }()
 
-    func makeDataSource() -> StargazersDataSource {
-        let dataSource = StargazersDataSource(
+    func makeDataSource() -> HomeDataSource {
+        let dataSource = HomeDataSource(
             tableView: tableView,
             cellProvider: { (tableView, indexPath, stargazer) ->
                 UITableViewCell? in
@@ -44,8 +44,8 @@ class HomeViewController: UIViewController {
     }
 
     func applySnapshot(items: [CityViewModel], animatingDifferences: Bool = false) {
-        var snapshot = self.dataSource.snapshot()
-        // snapshot.appendSections([.main])
+        var snapshot = HomeCitiesSnapshot()
+        snapshot.appendSections([.main])
         snapshot.appendItems(items)
         self.dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
     }
@@ -66,7 +66,13 @@ class HomeViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.fetchItems()
+         self.fetchItems()
+         self.homeViewModel.startUpdatingTemperatures()
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        bindViews()
     }
 
     private func fetchItems() {
@@ -84,7 +90,6 @@ class HomeViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
 
-        bindViews()
     }
 
     private func bindViews() {
@@ -100,12 +105,12 @@ class HomeViewController: UIViewController {
                 }
             }.disposed(by: &disposeBag)
         self.homeViewModel.cities
-            .subscribe { [weak self] value, _ in
+            .subscribe(DispatchQueue.main, { [weak self] value, _ in
                 guard let self = self else {
                     return
                 }
-                self.applySnapshot(items: value)
-            }.disposed(by: &disposeBag)
+                self.applySnapshot(items: value, animatingDifferences: true)
+            }).disposed(by: &disposeBag)
     }
 
     private func loadingSpinnerView() -> UIView {
@@ -126,6 +131,6 @@ extension HomeViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300.0
+        return 100.0
     }
 }

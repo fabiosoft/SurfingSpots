@@ -18,9 +18,9 @@ enum HomeViewModelSection {
 class HomeViewModel: HomeViewModelProtocol {
 
     private let service: Network!
-    let title: String = "Surfing Spots"
-    
-    private var tempTimer : Timer?
+    let title: String = NSLocalizedString("Surfing Spots", comment: "")
+
+    private var tempTimer: Timer?
 
     init(service: Network = NetworkClient()) {
         self.service = service
@@ -33,18 +33,22 @@ class HomeViewModel: HomeViewModelProtocol {
     /// the value is mutable, so only this class can modify it.
     private let isfetchingVariable = Variable<Bool>(false)
 
-//    var citiesChangeSnapshot: Observable<HomeCitiesSnapshot?> {
-//        return citiesChangeSnapshotVariable.asObservable()
-//    }
-//    private let citiesChangeSnapshotVariable = Variable<HomeCitiesSnapshot?>(nil)
-
     var cities: Observable<[CityViewModel]> {
         return citiesVariable.asObservable()
     }
     private let citiesVariable = Variable<[CityViewModel]>([])
-    
-    func startUpdatingTemperatures(){
-        
+
+    func startUpdatingTemperatures() {
+        self.tempTimer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true, block: { _ in
+
+            let randomCity = self.citiesVariable.value.randomElement()
+            randomCity?.temperature = .random(in: 1..<100)
+            let sortedCities = self.citiesVariable.value.sorted(by: { $0.temperature > $1.temperature })
+
+            print(sortedCities)
+
+            self.citiesVariable.onNext(value: sortedCities)
+        })
     }
 
     func fetchCities() {
@@ -61,7 +65,7 @@ class HomeViewModel: HomeViewModelProtocol {
 
                 case .success(let cities):
                     let viewmodels = cities
-                    // .sorted(by: { $0.temperature > $1.temperature }
+                        .sorted(by: { $0.temperature > $1.temperature })
                         .compactMap { CityViewModel($0) }
                     self.citiesVariable.onNext(value: viewmodels)
                 case .failure:

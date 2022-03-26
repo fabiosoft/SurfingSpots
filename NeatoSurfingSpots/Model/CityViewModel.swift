@@ -9,6 +9,8 @@ import Foundation
 
 protocol CityViewModelProtocol {
     var displayName: String? {get}
+    var temperature: Int {get set}
+    var isSunny: Bool {get}
 }
 
 class CityViewModel: CityViewModelProtocol {
@@ -19,6 +21,19 @@ class CityViewModel: CityViewModelProtocol {
         return city.name
     }
 
+    var temperature: Int {
+        get {
+            self.city.temperature
+        }
+        set {
+            self.city.temperature = newValue
+        }
+    }
+
+    var isSunny: Bool {
+        self.temperature > 30
+    }
+
     init(_ city: City, network: Network = NetworkClient()) {
         self.city = city
         self.network = network
@@ -26,13 +41,22 @@ class CityViewModel: CityViewModelProtocol {
 
 }
 
-extension CityViewModel: Hashable {
-    static func == (lhs: CityViewModel, rhs: CityViewModel) -> Bool {
-        return lhs.displayName == rhs.displayName
+ extension CityViewModel: Hashable {
+     func hash(into hasher: inout Hasher) {
+         hasher.combine(city.name)
+     }
+
+     static func == (lhs: CityViewModel, rhs: CityViewModel) -> Bool {
+         lhs.city.name == rhs.city.name
+     }
+ }
+
+ extension CityViewModel: CustomStringConvertible, CustomDebugStringConvertible {
+    var description: String {
+        return "\(self.city.name ?? "nowhere") \(self.city.temperature)"
     }
 
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(self.displayName)
+    var debugDescription: String {
+        return self.description
     }
-
-}
+ }
