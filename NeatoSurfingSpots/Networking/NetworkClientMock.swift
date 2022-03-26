@@ -32,7 +32,15 @@ class NetworkClientMock: Network {
 
     func cities(completion: @escaping (Result<[City], NetworkError>) -> Void) {
         let task = NetworkSessionTaskMock {
-            let cities = [City(name: "Napoli"), City(name: "Rome"), City(name: "Milan")]
+            let cities = [
+                City(name: "Cuba"),
+                City(name: "Los Angeles"),
+                City(name: "Miami"),
+                City(name: "Porto"),
+                City(name: "Ortona"),
+                City(name: "Riccione"),
+                City(name: "Midgar")
+            ]
             completion(.success(cities))
         }
         task.resume()

@@ -65,6 +65,39 @@ class NetworkClient: Network {
     }
 
     func randomNumber(completion: @escaping (Result<Int, NetworkError>) -> Void) {
+        let urlString = "http://numbersapi.com/random/math"
+        guard let url = URL(string: urlString) else {
+            completion(.failure(.malformedURL))
+            return
+        }
+        let task = session.loadData(from: url) { data, _, error in
+            guard let data = data, error == nil else {
+                completion(.failure(.networkError))
+                return
+            }
 
+            guard
+                let string = String(data: data, encoding: .utf8),
+                let stringValue = string.components(separatedBy: " ").first?.lowercased(),
+                stringValue != "infinity"
+            else {
+                return completion(.failure(.malformedData))
+            }
+            guard let randomNumber = Int(stringValue) else {
+                guard let exponential = self.exponential(from: stringValue) else {
+                    return completion(.failure(.malformedData))
+                }
+                return completion(.success(exponential / 100))
+            }
+            return completion(.success(randomNumber / 100))
+        }
+        task.resume()
+    }
+
+    private func exponential(from string: String) -> Int? {
+        guard let exponential = string.components(separatedBy: "e").first else {
+            return nil
+        }
+        return Int(exponential)
     }
 }
