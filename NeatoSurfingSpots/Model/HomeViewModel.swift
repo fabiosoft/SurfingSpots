@@ -46,8 +46,15 @@ class HomeViewModel: HomeViewModelProtocol {
         self.tempTimer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true, block: { _ in
 
             let randomCity = self.citiesVariable.value.randomElement()
-            randomCity?.temperature = .random(in: 1..<100)
-            let sortedCities = self.citiesVariable.value.sorted(by: { $0.temperature > $1.temperature })
+            randomCity?.temperature.onNext(value: .random(in: 1..<100))
+            let sortedCities = self.citiesVariable.value.sorted(by: {
+                guard let temperature1 = $0.temperature.value,
+                      let temperature2 = $1.temperature.value
+                else {
+                    return false
+                }
+                return temperature1 > temperature2
+            })
 
             print(sortedCities)
 
@@ -70,7 +77,14 @@ class HomeViewModel: HomeViewModelProtocol {
                 case .success(let cities):
                     let viewmodels = cities
                         .compactMap { CityViewModel($0) }
-                        .sorted(by: { $0.temperature > $1.temperature })
+                        .sorted(by: {
+                            guard let temperature1 = $0.temperature.value,
+                                  let temperature2 = $1.temperature.value
+                            else {
+                                return false
+                            }
+                            return temperature1 > temperature2
+                        })
                     self.citiesVariable.onNext(value: viewmodels)
                 case .failure:
                     self.citiesVariable.onNext(value: [])

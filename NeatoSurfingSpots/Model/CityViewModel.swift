@@ -6,11 +6,16 @@
 //
 
 import Foundation
+import UIKit
+import FNEasyBind
 
 protocol CityViewModelProtocol {
     var displayName: String? {get}
-    var temperature: Int {get set}
+    var temperature: Observable<Int> {get}
+    var skylineImage: UIImage? {get}
+    func skyline() -> UIImage?
     var isSunny: Bool {get}
+    func weatherConditions() -> String
 }
 
 class CityViewModel: CityViewModelProtocol {
@@ -21,16 +26,34 @@ class CityViewModel: CityViewModelProtocol {
         return city.name
     }
 
-    var temperature: Int
+    var skylineImage: UIImage?
+    func skyline() -> UIImage? {
+        if isSunny {
+            return skylineImage
+        }
+        return nil
+    }
 
     var isSunny: Bool {
-        self.temperature > 30
+        guard let temperature = self.temperature.value else {
+            return false
+        }
+        return temperature > 30
+    }
+
+    var temperature: Observable<Int> {
+        return temperatureVariable.asObservable()
+    }
+    private let temperatureVariable = Variable<Int>(Int.random(in: 0..<100))
+
+    func weatherConditions() -> String {
+        "\(isSunny ? NSLocalizedString("Sunny", comment: "") : NSLocalizedString("Cloudy", comment: "")) - \(self.temperature.value ?? 0) degree"
     }
 
     init(_ city: City, network: Network = NetworkClient()) {
         self.city = city
         self.network = network
-        self.temperature = Int.random(in: 0..<100)
+        self.skylineImage = UIImage(named: "\(Int.random(in: 1..<7))") // 1-6
     }
 
 }
@@ -47,7 +70,7 @@ class CityViewModel: CityViewModelProtocol {
 
  extension CityViewModel: CustomStringConvertible, CustomDebugStringConvertible {
     var description: String {
-        return "\(self.displayName ?? "nowhere") \(self.temperature)"
+        return "\(self.displayName ?? "nowhere") \(self.temperature.value ?? 0) degree"
     }
 
     var debugDescription: String {
