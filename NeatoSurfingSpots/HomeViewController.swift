@@ -12,7 +12,7 @@ class HomeViewController: UIViewController {
     typealias HomeDataSource = UITableViewDiffableDataSource<HomeViewModelSection, CityViewModel>
     typealias HomeCitiesSnapshot = NSDiffableDataSourceSnapshot<HomeViewModelSection, CityViewModel>
 
-    private var homeViewModel: HomeViewModel!
+    private var homeViewModel: HomeViewModelProtocol!
     weak var coordinator: MainCoordinator?
     private var disposeBag = DisposeBag()
     private lazy var dataSource = makeDataSource()
@@ -50,7 +50,7 @@ class HomeViewController: UIViewController {
         self.dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
     }
 
-    init(viewModel: HomeViewModel? = HomeViewModel()) {
+    init(viewModel: HomeViewModelProtocol? = HomeViewModel()) {
         super.init(nibName: nil, bundle: nil)
         self.homeViewModel = viewModel
     }

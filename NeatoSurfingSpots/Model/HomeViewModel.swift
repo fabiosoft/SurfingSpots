@@ -10,6 +10,10 @@ import FNEasyBind
 
 protocol HomeViewModelProtocol {
     var title: String { get }
+    var isfetching: Observable<Bool> { get }
+    var cities: Observable<[CityViewModel]> { get }
+    func fetchCities()
+    func startUpdatingTemperatures()
 }
 enum HomeViewModelSection {
     case main
@@ -65,8 +69,8 @@ class HomeViewModel: HomeViewModelProtocol {
 
                 case .success(let cities):
                     let viewmodels = cities
-                        .sorted(by: { $0.temperature > $1.temperature })
                         .compactMap { CityViewModel($0) }
+                        .sorted(by: { $0.temperature > $1.temperature })
                     self.citiesVariable.onNext(value: viewmodels)
                 case .failure:
                     self.citiesVariable.onNext(value: [])

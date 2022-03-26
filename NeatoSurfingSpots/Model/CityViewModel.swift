@@ -21,14 +21,7 @@ class CityViewModel: CityViewModelProtocol {
         return city.name
     }
 
-    var temperature: Int {
-        get {
-            self.city.temperature
-        }
-        set {
-            self.city.temperature = newValue
-        }
-    }
+    var temperature: Int
 
     var isSunny: Bool {
         self.temperature > 30
@@ -37,6 +30,7 @@ class CityViewModel: CityViewModelProtocol {
     init(_ city: City, network: Network = NetworkClient()) {
         self.city = city
         self.network = network
+        self.temperature = Int.random(in: 0..<100)
     }
 
 }
@@ -53,7 +47,7 @@ class CityViewModel: CityViewModelProtocol {
 
  extension CityViewModel: CustomStringConvertible, CustomDebugStringConvertible {
     var description: String {
-        return "\(self.city.name ?? "nowhere") \(self.city.temperature)"
+        return "\(self.displayName ?? "nowhere") \(self.temperature)"
     }
 
     var debugDescription: String {

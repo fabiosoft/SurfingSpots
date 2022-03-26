@@ -17,10 +17,8 @@ class SurfingSpot: Codable {
 
 class City: Codable {
     let name: String?
-    var temperature: Int = 0
 
     init(name: String?) {
         self.name = name
-        self.temperature = Int.random(in: 0..<100)
     }
 }
