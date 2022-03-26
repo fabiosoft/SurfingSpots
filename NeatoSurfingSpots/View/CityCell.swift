@@ -53,6 +53,7 @@ class CityCell: UITableViewCell, Reusable {
         self.contentView.addSubview(labelsStack)
         labelsStack.axis = .vertical
         labelsStack.alignment = .leading
+        labelsStack.spacing = 8
 
         NSLayoutConstraint.activate([
             cityImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 8),
@@ -61,7 +62,7 @@ class CityCell: UITableViewCell, Reusable {
             cityImageView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -8),
 
             labelsStack.leadingAnchor.constraint(equalTo: self.contentView.readableContentGuide.leadingAnchor),
-            labelsStack.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -8),
+            labelsStack.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -24),
             labelsStack.trailingAnchor.constraint(lessThanOrEqualTo: self.contentView.readableContentGuide.trailingAnchor)
         ])
     }

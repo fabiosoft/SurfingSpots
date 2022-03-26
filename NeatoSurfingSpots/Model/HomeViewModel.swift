@@ -43,7 +43,7 @@ class HomeViewModel: HomeViewModelProtocol {
     private let citiesVariable = Variable<[CityViewModel]>([])
 
     func startUpdatingTemperatures() {
-        self.tempTimer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true, block: { _ in
+        self.tempTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { _ in
 
             let randomCity = self.citiesVariable.value.randomElement()
             randomCity?.temperature.onNext(value: .random(in: 1..<100))
