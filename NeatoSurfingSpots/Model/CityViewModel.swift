@@ -40,7 +40,7 @@ class CityViewModel: CityViewModelProtocol {
         guard let temperature = self.temperature.value else {
             return false
         }
-        return temperature > 30
+        return temperature >= 30
     }
 
     /// current temperature, observable
