@@ -24,7 +24,7 @@ class CityViewModel: CityViewModelProtocol {
 
     // displayable city name
     var displayName: String? {
-        return city.name
+        return city.name?.capitalized
     }
 
     private var skylineImage: UIImage?

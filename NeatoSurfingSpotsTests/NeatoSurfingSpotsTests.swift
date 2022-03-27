@@ -26,41 +26,69 @@ class NeatoSurfingSpotsTests: XCTestCase {
 
     /// test requested cities
     func testFetchCities() {
-        let exp = XCTestExpectation()
-        let network = NetworkClientMock()
-        let perPage = 3
+        let exp = expectation(description: "wait for cities")
+
+        let mockyOutput = ["cities": [
+            City(name: "Cuba"),
+            City(name: "Los Angeles"),
+            City(name: "Miami"),
+            City(name: "Porto"),
+            City(name: "Ortona"),
+            City(name: "Riccione"),
+            City(name: "Midgar")
+        ]]
+
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        let mockyData = try! encoder.encode(mockyOutput)
+        MockyURLProtocol.testURLs = [
+            URL(string: "https://run.mocky.io/v3/652ceb94-b24e-432b-b6c5-8a54bc1226b6")!: mockyData
+        ]
+        let config = URLSessionConfiguration.ephemeral
+        config.protocolClasses = [MockyURLProtocol.self]
+        let session = URLSession(configuration: config)
+        let network = NetworkClient(session: session)
         network.cities { result in
             switch result {
             case .success(let cities):
-                XCTAssertEqual(cities.count, perPage)
+                XCTAssertEqual(cities.count, mockyOutput["cities"]!.count)
             case .failure(let error):
                 XCTAssertNotNil(error)
-
-                exp.fulfill()
             }
+            exp.fulfill()
         }
+        waitForExpectations(timeout: 3)
     }
 
     /// test fetched random number
     func testFetchRandomNumber() {
-        let exp = XCTestExpectation()
-        let network = NetworkClientMock()
-        network.randomNumber = 42
+        let exp = expectation(description: "wait for number")
+
+        let mockyOutput = "2161 is a prime factor of 111111111111111111111111111111."
+        let mockyData = mockyOutput.data(using: .utf8)!
+        MockyURLProtocol.testURLs = [
+            URL(string: "http://numbersapi.com/random/math")!: mockyData
+        ]
+        let config = URLSessionConfiguration.ephemeral
+        config.protocolClasses = [MockyURLProtocol.self]
+        let session = URLSession(configuration: config)
+        let network = NetworkClient(session: session)
         network.randomNumber { result in
             switch result {
             case .success(let number):
-                XCTAssertEqual(number, 42)
+                XCTAssertEqual(number, 2161 / 100)
             case .failure(let error):
                 XCTAssertNotNil(error)
-
-                exp.fulfill()
             }
+            exp.fulfill()
         }
+        waitForExpectations(timeout: 3)
     }
 
     /// test sunny, skyline image according to temperature
     func testCityViewModel() {
-        let city = City(name: "Napoli")
+        let cityName = "napoli"
+        let city = City(name: cityName)
         let cityVM = CityViewModel(city)
         XCTAssertEqual(cityVM.displayName, "Napoli")
         cityVM.temperature.onNext(value: 31)

@@ -10,6 +10,7 @@
 		509C3C5B25B4C69EAE112BA7 /* Pods_NeatoSurfingSpots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B72944382DB072ECA995BEFF /* Pods_NeatoSurfingSpots.framework */; };
 		5DFB0BB25D4BE80227EEE964 /* Pods_NeatoSurfingSpots_NeatoSurfingSpotsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23CE5042D1469BF552F0D8BF /* Pods_NeatoSurfingSpots_NeatoSurfingSpotsUITests.framework */; };
 		E019D1B785AEB23B773C6124 /* Pods_NeatoSurfingSpotsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DA3CC8C83330EC9E2D2362 /* Pods_NeatoSurfingSpotsTests.framework */; };
+		E53EA76327F261B70010C6F6 /* MockyURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53EA76227F261B70010C6F6 /* MockyURLProtocol.swift */; };
 		E5512AED27EE70DF0089F274 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512AEC27EE70DF0089F274 /* AppDelegate.swift */; };
 		E5512AF127EE70DF0089F274 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512AF027EE70DF0089F274 /* HomeViewController.swift */; };
 		E5512AF627EE70E20089F274 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5512AF527EE70E20089F274 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		C7DA3CC8C83330EC9E2D2362 /* Pods_NeatoSurfingSpotsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeatoSurfingSpotsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE760C55C22AA1451F9BEDCE /* Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests.debug.xcconfig"; path = "Target Support Files/Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests/Pods-NeatoSurfingSpots-NeatoSurfingSpotsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DEE6119834B6FFD060BA81B8 /* Pods-NeatoSurfingSpots.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatoSurfingSpots.release.xcconfig"; path = "Target Support Files/Pods-NeatoSurfingSpots/Pods-NeatoSurfingSpots.release.xcconfig"; sourceTree = "<group>"; };
+		E53EA76227F261B70010C6F6 /* MockyURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockyURLProtocol.swift; sourceTree = "<group>"; };
 		E5512AE927EE70DF0089F274 /* NeatoSurfingSpots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeatoSurfingSpots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5512AEC27EE70DF0089F274 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5512AF027EE70DF0089F274 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				E5512B0327EE70E30089F274 /* NeatoSurfingSpotsTests.swift */,
+				E53EA76227F261B70010C6F6 /* MockyURLProtocol.swift */,
 			);
 			path = NeatoSurfingSpotsTests;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5512B0427EE70E30089F274 /* NeatoSurfingSpotsTests.swift in Sources */,
+				E53EA76327F261B70010C6F6 /* MockyURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
