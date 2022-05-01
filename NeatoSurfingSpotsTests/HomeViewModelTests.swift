@@ -59,7 +59,7 @@ class HomeViewModelTests: XCTestCase {
         XCTAssertEqual(citiesSpy.values.count, 1)
         sut.isfetching.onNext(value: true)
         sut.fetchCities()
-        XCTAssertEqual(citiesSpy.values.count, 1) //it's already fetching
+        XCTAssertEqual(citiesSpy.values.count, 1) // it's already fetching
     }
     
     func testFetchCitiesFails() {

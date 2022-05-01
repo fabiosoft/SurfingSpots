@@ -18,7 +18,7 @@ class HomeViewControllerTest: XCTestCase {
     }
     
     override func tearDown() {
-        executeRunLoop() //fixes the memory problem when a UIWindow is used
+        executeRunLoop() // fixes the memory problem when a UIWindow is used
         sut = nil
         super.tearDown()
     }
@@ -28,7 +28,7 @@ class HomeViewControllerTest: XCTestCase {
         let homeVM = HomeViewModel(service: service)
         let sut = HomeViewController(viewModel: homeVM)
         let window = UIWindow()
-        window.addSubview(sut.view) //for .isFirstResponder/Hierarchy testing
+        window.addSubview(sut.view) // for .isFirstResponder/Hierarchy testing
         sut.loadViewIfNeeded()
         return sut
     }
