@@ -52,23 +52,65 @@ class HomeViewModelTests: XCTestCase {
     }
 
     /// test requested cities
+    /// test requested cities
     func testFetchCities() {
-        let citiesSpy = SpyTestSequence(sut.cities)
-        XCTAssertEqual(citiesSpy.values.count, 0)
-        sut.fetchCities()
-        XCTAssertEqual(citiesSpy.values.count, 1)
-        sut.isfetching.onNext(value: true)
-        sut.fetchCities()
-        XCTAssertEqual(citiesSpy.values.count, 1) // it's already fetching
+        let exp = expectation(description: "wait for cities")
+
+        let mockyOutput = ["cities": [
+            City(name: "Cuba"),
+            City(name: "Los Angeles"),
+            City(name: "Miami"),
+            City(name: "Porto"),
+            City(name: "Ortona"),
+            City(name: "Riccione"),
+            City(name: "Midgar")
+        ]]
+
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        let mockyData = try! encoder.encode(mockyOutput)
+        MockyURLProtocol.testURLs = [
+            URL(string: "https://run.mocky.io/v3/652ceb94-b24e-432b-b6c5-8a54bc1226b6")!: mockyData
+        ]
+        let config = URLSessionConfiguration.ephemeral
+        config.protocolClasses = [MockyURLProtocol.self]
+        let session = URLSession(configuration: config)
+        let network = NetworkClient(session: session)
+        network.cities { result in
+            switch result {
+            case .success(let cities):
+                XCTAssertEqual(cities.count, mockyOutput["cities"]!.count)
+            case .failure(let error):
+                XCTAssertNotNil(error)
+            }
+            exp.fulfill()
+        }
+        waitForExpectations(timeout: 3)
     }
-    
-    func testFetchCitiesFails() {
-        let citiesSpy = SpyTestSequence(sut.cities)
-        let service = NetworkServiceMock()
-        service.result = .failure(NetworkError.networkError)
-        let sut = HomeViewModel(service: service)
-        sut.fetchCities()
-        XCTAssertEqual(citiesSpy.values.count, 0)
+
+    /// test fetched random number
+    func testFetchRandomNumber() {
+        let exp = expectation(description: "wait for number")
+
+        let mockyOutput = "2161 is a prime factor of 111111111111111111111111111111."
+        let mockyData = mockyOutput.data(using: .utf8)!
+        MockyURLProtocol.testURLs = [
+            URL(string: "http://numbersapi.com/random/math")!: mockyData
+        ]
+        let config = URLSessionConfiguration.ephemeral
+        config.protocolClasses = [MockyURLProtocol.self]
+        let session = URLSession(configuration: config)
+        let network = NetworkClient(session: session)
+        network.randomNumber { result in
+            switch result {
+            case .success(let number):
+                XCTAssertEqual(number, 2161 / 100)
+            case .failure(let error):
+                XCTAssertNotNil(error)
+            }
+            exp.fulfill()
+        }
+        waitForExpectations(timeout: 3)
     }
     
     func testSortingPredicate() {
@@ -76,23 +118,6 @@ class HomeViewModelTests: XCTestCase {
         XCTAssertFalse(sut.sortPredicate(20, 30))
         let nilValue: Int? = nil
         XCTAssertFalse(sut.sortPredicate(nilValue, nilValue))
-    }
-
-    /// test fetched random number
-    func testFetchRandomNumber() {
-        let exp = XCTestExpectation()
-        let network = NetworkClientMock()
-        network.randomNumber = 42
-        network.randomNumber { result in
-            switch result {
-            case .success(let number):
-                XCTAssertEqual(number, 42)
-            case .failure(let error):
-                XCTAssertNotNil(error)
-
-                exp.fulfill()
-            }
-        }
     }
 
     /// test sunny, skyline image according to temperature
