@@ -63,7 +63,7 @@ class HomeViewModel: HomeViewModelProtocol {
     }
 
     /// sort predicate to compare items descending accoring to temperature value (sort descending)
-    private func sortPredicate<Element: Comparable>(_ elem1: Element?, _ elem2: Element?) -> Bool {
+    func sortPredicate<Element: Comparable>(_ elem1: Element?, _ elem2: Element?) -> Bool {
         guard let temperature1 = elem1,
               let temperature2 = elem2
         else {
@@ -82,19 +82,17 @@ class HomeViewModel: HomeViewModelProtocol {
             guard let self = self else {
                 return
             }
-            DispatchQueue.main.async {
-                switch result {
-
-                case .success(let cities):
-                    let viewmodels = cities
-                        .compactMap { CityViewModel($0) }
-                        .sorted(by: { self.sortPredicate($0.temperature.value, $1.temperature.value) })
-                    self.citiesVariable.onNext(value: viewmodels)
-                case .failure:
-                    self.citiesVariable.onNext(value: [])
-                }
-                self.isfetchingVariable.onNext(value: false)
+            switch result {
+                
+            case .success(let cities):
+                let viewmodels = cities
+                    .compactMap { CityViewModel($0) }
+                    .sorted(by: { self.sortPredicate($0.temperature.value, $1.temperature.value) })
+                self.citiesVariable.onNext(value: viewmodels)
+            case .failure:
+                self.citiesVariable.onNext(value: [])
             }
+            self.isfetchingVariable.onNext(value: false)
         }
     }
 }

@@ -15,9 +15,11 @@
 		E5512AF627EE70E20089F274 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5512AF527EE70E20089F274 /* Assets.xcassets */; };
 		E5512AF927EE70E20089F274 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5512AF727EE70E20089F274 /* LaunchScreen.storyboard */; };
 		E5512B0427EE70E30089F274 /* NeatoSurfingSpotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512B0327EE70E30089F274 /* NeatoSurfingSpotsTests.swift */; };
-		E5512B0E27EE70E30089F274 /* NeatoSurfingSpotsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512B0D27EE70E30089F274 /* NeatoSurfingSpotsUITests.swift */; };
-		E5512B1027EE70E30089F274 /* NeatoSurfingSpotsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512B0F27EE70E30089F274 /* NeatoSurfingSpotsUITestsLaunchTests.swift */; };
 		E5512B1E27EE72BD0089F274 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512B1D27EE72BD0089F274 /* Coordinator.swift */; };
+		E56371EF2819DB8E00AA7EB6 /* HomeViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56371EE2819DB8E00AA7EB6 /* HomeViewControllerTest.swift */; };
+		E579F6D7281B347E0063A516 /* SpyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E579F6D6281B347E0063A516 /* SpyTest.swift */; };
+		E579F6D8281B405B0063A516 /* NeatoSurfingSpotsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512B0D27EE70E30089F274 /* NeatoSurfingSpotsUITests.swift */; };
+		E579F6D9281B405E0063A516 /* NeatoSurfingSpotsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5512B0F27EE70E30089F274 /* NeatoSurfingSpotsUITestsLaunchTests.swift */; };
 		E5CDE19727EE785B009219AD /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDE19627EE785B009219AD /* NetworkClient.swift */; };
 		E5CDE19927EE78E7009219AD /* SurfingSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDE19827EE78E7009219AD /* SurfingSpot.swift */; };
 		E5CDE19B27EE7AC8009219AD /* NetworkClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CDE19A27EE7AC8009219AD /* NetworkClientMock.swift */; };
@@ -66,6 +68,8 @@
 		E5512B0D27EE70E30089F274 /* NeatoSurfingSpotsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeatoSurfingSpotsUITests.swift; sourceTree = "<group>"; };
 		E5512B0F27EE70E30089F274 /* NeatoSurfingSpotsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeatoSurfingSpotsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E5512B1D27EE72BD0089F274 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		E56371EE2819DB8E00AA7EB6 /* HomeViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTest.swift; sourceTree = "<group>"; };
+		E579F6D6281B347E0063A516 /* SpyTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyTest.swift; sourceTree = "<group>"; };
 		E5CDE19627EE785B009219AD /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		E5CDE19827EE78E7009219AD /* SurfingSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfingSpot.swift; sourceTree = "<group>"; };
 		E5CDE19A27EE7AC8009219AD /* NetworkClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientMock.swift; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				E5512B0327EE70E30089F274 /* NeatoSurfingSpotsTests.swift */,
+				E56371EE2819DB8E00AA7EB6 /* HomeViewControllerTest.swift */,
+				E579F6D6281B347E0063A516 /* SpyTest.swift */,
 			);
 			path = NeatoSurfingSpotsTests;
 			sourceTree = "<group>";
@@ -432,7 +438,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  #swiftlint\n  swiftlint --fix && swiftlint\n  #echo \"no-op\"\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\n  #swiftlint --fix && swiftlint\n  #echo \"no-op\"\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		EED7E93801F904B03E20AB9B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -504,6 +510,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5512B0427EE70E30089F274 /* NeatoSurfingSpotsTests.swift in Sources */,
+				E56371EF2819DB8E00AA7EB6 /* HomeViewControllerTest.swift in Sources */,
+				E579F6D7281B347E0063A516 /* SpyTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,8 +519,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5512B0E27EE70E30089F274 /* NeatoSurfingSpotsUITests.swift in Sources */,
-				E5512B1027EE70E30089F274 /* NeatoSurfingSpotsUITestsLaunchTests.swift in Sources */,
+				E579F6D8281B405B0063A516 /* NeatoSurfingSpotsUITests.swift in Sources */,
+				E579F6D9281B405E0063A516 /* NeatoSurfingSpotsUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

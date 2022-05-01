@@ -12,12 +12,12 @@ class HomeViewController: UIViewController {
     typealias HomeDataSource = UITableViewDiffableDataSource<HomeViewModelSection, CityViewModel>
     typealias HomeCitiesSnapshot = NSDiffableDataSourceSnapshot<HomeViewModelSection, CityViewModel>
 
-    private var homeViewModel: HomeViewModelProtocol!
+    private(set) var homeViewModel: HomeViewModelProtocol!
     weak var coordinator: MainCoordinator?
     private var disposeBag = DisposeBag()
-    private lazy var dataSource = makeDataSource()
+    private(set) lazy var dataSource = makeDataSource()
 
-    private lazy var tableView: UITableView = {
+    private(set) lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(CityCell.self, forCellReuseIdentifier: CityCell.reuseIdentifier)
